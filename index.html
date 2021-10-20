@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +8,32 @@
     <title>Класс</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <header>
         <h1>Выбери свою карточку приятель</h1>
     </header>
     <div class="cardblock">
-        <div class="cardblock-card"> <a href="unfortune.html">карточка№1</a></div>
-        <div class="cardblock-card"><a href="unfortune.html">карточка№2</a></div>
-        <div class="cardblock-card"><a href="fortune.html">карточка№3</a></div>
+        <div class="cardblock-card"><a onclick="rolled(0)">карточка№1</a></div>
+        <div class="cardblock-card"><a onclick="rolled(1)">карточка№2</a></div>
+        <div class="cardblock-card"><a onclick="rolled(2)">карточка№3</a></div>
     </div>
     <footer>
-
     </footer>
-
-
-
-    
 </body>
+
+<script>
+    let temp = [];
+
+    for (let i = 0; i < 3; i++) {
+        temp.push(Math.round(Math.random()));
+    }
+
+    console.log(temp);
+
+    rolled = function (index) {
+        window.open(temp[index] == 1 ? 'fortune.html' : 'unfortune.html');
+    }
+</script>
+
 </html>
